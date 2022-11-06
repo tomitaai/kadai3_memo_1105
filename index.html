@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>myMemoPad</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+    <header>
+        <h1>MemoPad</h1>
+    </header>
+    <main>
+        <input type="text" id="key">
+        <textarea id="memo"></textarea>
+        <ul>
+            <li id="save">Save</li>
+            <li id="clear">Clear</li>
+        </ul>
+    </main>
+    <table id="list">
+        <!-- ここに追加データが挿入される -->
+    </table>
+    <script>
+
+        //1.Save クリックイベント
+
+        // saveのボタンが押されたら、実行したい🤗
+        $("#save").on('click', function () {
+            // jQueryでinputのhtmlの記述された文字を取得する方法
+            // val();
+            // $("#xx").val(); inputタグにしか使えない
+            // input text email textarea tel
+            let key = $("#key").val();
+            let memo = $("#memo").val();
+            console.log(key, 'データが取れてるかチェック')
+            console.log(memo, 'データが取れてるかチェック')
+
+            // データを保存します⇨localStrageを使います🤗
+            localStorage.setItem(key, memo)
+
+            // const html = '<tr><th>' + key + '</th><td>' + value + '</td></tr>';
+            const html = `
+                <tr>
+                    <th>${key}</th>
+                    <td>${memo}</td>
+                </tr>    
+            `;
+            $("#list").append(html);
+
+            // if (key === '') {
+            //     alert('文字入れろよ！！！！')
+            // }
+        });
+
+
+
+
+        //2.clear クリックイベント
+
+        $("#clear").on("click", function () {
+            localStorage.clear();
+
+            // これだけだとhtmlが残ってしまうのでそれも削除
+            $("#list").empty();
+        });
+
+
+
+
+        //3.ページ読み込み：保存データ取得表示
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            const html = `
+        <tr>
+            <th>${key}</th>
+            <td>${value}</td>
+        </tr>
+    
+    `
+            // 画面上に埋め込み
+            $("#list").append(html)
+        }
+
+
+
+
+    </script>
+    <footer><small>G's</small></footer>
+</body>
+
+</html>
