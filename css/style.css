@@ -1,0 +1,43 @@
+.header{
+  margin: 10px;
+}
+
+.title-img{
+  width:100%;
+  height:100%;
+}
+
+.btn:hover{
+  color: aqua;
+}
+
+.menu{
+  text-align: right;
+}
+
+.resister-btn{
+  background: #28304e;
+  color: #e8eaef;
+}
+
+.allclear-btn{
+  background: #c3c7d3;
+  color: #28304e;
+  margin: 10px;
+}
+
+
+.close-btn{
+  background: #c3c7d3;
+  color: #28304e;
+}
+
+.save-btn{
+  background: #28304e;
+  color: #e8eaef;
+}
+
+.myrecipe{
+  border-radius: 20%;
+  border: 2px solid #28304e;
+}
