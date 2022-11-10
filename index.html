@@ -17,53 +17,26 @@
 
 <body>
     <header>
-        <div class="row">
-        <div class="col-3 col-md-4"></div>
-            <div class="col-6 col-md-4">
-                <img class="title-img" src="img/title.png" alt="俺のレシピ">
+        <div class="fix">
+            <div class="wrap">
+                <h1 class="title">とみた家の食卓</h1>
+                <img class="title-img" src="img/title.png" alt="マイレシピ">
+                <div class="menu">
+                    <button type="button" class="btn register-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        登録
+                    </button>
+                    <button type="button" class="btn allclear-btn" id="clear">
+                        全削除
+                    </button>
+                </div>
             </div>
-        <div class="col-3 col-md-4"></div>
         </div>
     </header>
-
+                
     <main>
-        <div class="menu">
-            <button type="button" class="btn resister-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Resister
-            </button>
-            <button type="button" class="btn allclear-btn" id="clear">
-                All Data Clear
-            </button>
-        </div>
-    
         <div class="row myrecipelist">
         </div>
-
     </main>
-
-    <!-- <main> -->
-        <!-- <label for="name">料理名：</label>
-        <textarea id="name" cols="50" rows="2"></textarea>
-        <label for="calorie">カロリー：</label>
-        <input type="number" id="calorie">
-        <label for="time">調理時間：</label>
-        <input type="time" id="time">
-        <label for="cost">費用目安：</label>
-        <input type="text" id="cost">
-        <label for="evaluation">評価：</label>
-        <input type="text" id="evaluation">
-        <label for="memo">めも：</label>
-        <textarea id="memo" cols="50" rows="2"></textarea>
-
-
-        <ul>
-            <li id="sa">保存</li>
-            <li id="clear">全データ削除</li>
-        </ul> -->
-    <!-- </main> -->
-
-
-
 
 
 
@@ -79,32 +52,60 @@
                 <div class="container-fluid">
                 <form>
                     <div class="form-group">
-                        <label for="name">料理名：</label>
-                        <textarea id="name" class="form-control"></textarea>
-                    </div>        
+                            <label class="normallabel" for="name">料理名</label>
+                            <textarea id="name" class="form-control"></textarea>
+                    </div>       
+                    <div class="form-group">
+                        <label class="normallabel" for="image">レシピ画像</label>
+                        <input type="file" id="image" class="form-control" accept="image/*">
+                        <div class="row">
+                            <div class="col-3 uploadimagearea" id="uploadimage" class="form-control"></div>
+                            <textarea id="base64" class="col-9 base64area" rows="6"></textarea>
+                        </div>
+                    <div class="form-group">
+                        <label class="normallabel" for="url">URL</label>
+                        <input type="url" id="url" class="form-control">
+                    </div>
+                    </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <label for="calorie">カロリー：</label>
-                            <input type="number" id="calorie" class="form-control">
+                        <div class="col-md-4 form-group">
+                            <label class="starlabel" for="rating1">たろう</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating1" value="1"><i></i>
+                                <input type="radio" name="rating1" value="2"><i></i>
+                                <input type="radio" name="rating1" value="3"><i></i>
+                                <input type="radio" name="rating1" value="4"><i></i>
+                                <input type="radio" name="rating1" value="5"><i></i>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <label for="time">調理時間：</label>
-                            <input type="time" id="time" class="form-control">
+                        <div class="col-md-4 form-group">
+                            <label class="starlabel" for="rating2">はなこ</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating2" value="1"><i></i>
+                                <input type="radio" name="rating2" value="2"><i></i>
+                                <input type="radio" name="rating2" value="3"><i></i>
+                                <input type="radio" name="rating2" value="4"><i></i>
+                                <input type="radio" name="rating2" value="5"><i></i>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <label for="cost" >費用目安：</label>
-                            <input type="text" id="cost" class="form-control">
+                        <div class="col-md-4 form-group">
+                            <label class="starlabel" for="rating3">けん</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating3" value="1"><i></i>
+                                <input type="radio" name="rating3" value="2"><i></i>
+                                <input type="radio" name="rating3" value="3"><i></i>
+                                <input type="radio" name="rating3" value="4"><i></i>
+                                <input type="radio" name="rating3" value="5"><i></i>
+                            </div>
                         </div>
                     </div>
-                        <label for="evaluation">評価：</label>
-                        <input type="text" id="evaluation" class="form-control">
-                        <label for="memo">めも：</label>
+                    <div class="form-group">
+                        <label class="normallabel" for="memo">めも：</label>
                         <textarea id="memo" cols="50" rows="2" class="form-control"></textarea>
-                
+                    </div>
                 </form>
                 </div>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn close-btn" data-bs-dismiss="modal">
                     Close

@@ -1,3 +1,13 @@
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+body{
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .header{
   margin: 10px;
 }
@@ -8,22 +18,35 @@
 }
 
 .btn:hover{
-  color: aqua;
+  background: #f7b9778a;
+  border: 4px solid #f7b977;
 }
 
 .menu{
   text-align: right;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  z-index: 3;
 }
 
-.resister-btn{
-  background: #28304e;
-  color: #e8eaef;
+.register-btn{
+  background: #f7b977;
+  color: #333;
+  display: inline-block;
+  padding:10px 30px 10px 30px;
+  text-align: center;
+  border-radius: 25px;
 }
 
 .allclear-btn{
-  background: #c3c7d3;
-  color: #28304e;
+  background: #f7b977;
+  color: #333;
+  display: inline-block;
+  padding:10px 30px 10px 30px;
   margin: 10px;
+  text-align: center;
+  border-radius: 25px;
 }
 
 
@@ -37,7 +60,159 @@
   color: #e8eaef;
 }
 
+/* 入力フォーム */
+.form-group{
+  margin: 18px 0px 5px 0px;
+}
+
+label{
+  margin-bottom: 8px;
+}
+.starlabel{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+
+/* 画面表示 */
+
+/* .fix{
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 70px;
+} */
+
+.wrap {
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+  }
+
+.title-img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.title {
+font-size: 30px;
+font-weight: bold;
+color: rgba(255, 255, 255, 0.786);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.myrecipelist{
+  margin-bottom: 70px;
+}
+
 .myrecipe{
-  border-radius: 20%;
-  border: 2px solid #28304e;
+  margin: 20px;
+  padding: 10px;
+  background-color: #fffff9;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius:30px;
+}
+
+.myrecipe:hover{
+  background: #f7b9778a;
+  border: 4px solid #f7b977;
+  color: #222;
+}
+
+.name{
+  font-weight: 700;
+  overflow:hidden;
+  height:3em;
+}
+
+.recipe-img{
+  width:100%;
+  aspect-ratio: 1 / 1;
+}
+
+.memo{
+  height:6rem;
+}
+
+.uploadimagearea>img{
+  width: auto;
+  height: 60px;
+}
+
+.uploadimagearea{
+  text-align: center;
+}
+
+.base64area{
+  font-size: 0.625rem;
+  display: none;
+}
+
+.starimagearea>img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+/* 以下星評価部分 */
+
+
+.star-rating {
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  /* margin: 12px 0px 5px 0px; */
+  width: 150px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-rating i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-rating input {
+  opacity: 0;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+.star-rating input:hover + i,
+.star-rating input:checked + i {
+  opacity: 1;
+}
+.star-rating i ~ i {
+  width: 40%;
+}
+.star-rating i ~ i ~ i {
+  width: 60%;
+}
+.star-rating i ~ i ~ i ~ i {
+  width: 80%;
+}
+.star-rating i ~ i ~ i ~ i ~ i {
+  width: 100%;
 }
