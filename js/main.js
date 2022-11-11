@@ -40,6 +40,9 @@ for (let i = 1; i < localStorage.length+1; i++) {
         $(".star-img2"+i).attr("src", "img/r5.png");
     }
 
+    console.log(localData.rating3)
+    console.log(localData)
+
     if(localData.rating3==="1"){
         $(".star-img3"+i).attr("src", "img/r1.png");
     }else if(localData.rating3==="2"){
@@ -49,7 +52,7 @@ for (let i = 1; i < localStorage.length+1; i++) {
     }else if(localData.rating3==="4"){
         $(".star-img3"+i).attr("src", "img/r4.png");
     }else{
-        $(".star-img1"+i).attr("src", "img/r5.png");
+        $(".star-img3"+i).attr("src", "img/r5.png");
     }
 }
 
